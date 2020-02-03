@@ -4,7 +4,7 @@ const selections = {
     1: 'X',
     '-1': 'O'
 };
-const winCondition = [
+const winConditions = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8], 
     [0, 3, 6], [1, 4, 7], [2, 5, 8],
     [0, 4, 8], [2, 4, 6]
@@ -25,7 +25,6 @@ document.getElementById('board').addEventListener('click', squareClick);
 resetBtn.addEventListener('click', init);
 
 /*----- functions -----*/
-
 init();
 
 function init() {
@@ -59,10 +58,11 @@ function squareClick(e) {
     board[idx] = turn;
     turn *= -1;
 
-    winCondition.forEach(function(condition) {
-        let total = Math.abs(board[condition[0]] + board[condition[1]] + board[condition[2]]);
+    let total = 0;
+    winConditions.forEach(function(condition) {
+        total = Math.abs(board[condition[0]] + board[condition[1]] + board[condition[2]]);
         if (total === 3) winner = board[condition[0]];
-        if (!board.includes(null)) winner = 'T';
+        if (!board.includes(null) && winner === null) winner = 'T';
     });
 
     render();
