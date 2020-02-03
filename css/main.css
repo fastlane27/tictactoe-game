@@ -17,33 +17,28 @@ body {
 }
 
 h1 {
-    font-size: 2.5vw;
-    margin-top: 4vmin;
+    font-size: 4vmin;
+    margin-top: 3vmin;
 }
 
 main {
-    position: relative;
-    padding-top: 35%;
-    width: 35%;
-    margin: 4vmin auto 4vmin auto;
+    width: 70vmin;
+    height: 70vmin;
+    margin: 3vmin auto;
 }
 
 #board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
 }
 
 section {
-    border: 0.4vw solid var(--text-light);
-    font-size: 8vw;
+    border: 0.5vmin solid var(--text-light);
+    font-size: 16vmin;
     font-weight: bold;
-    padding-top: 0.8vw;
 }
 
 #board > section:nth-child(-n + 3) {
@@ -63,13 +58,13 @@ section {
 }
 
 button {
-    font-size: 1.5vw;
+    font-size: 3vmin;
     font-weight: bold;
     color: var(--text-light);
     background-color: rgb(64, 64, 64);
     border: 0.2em solid var(--text-light);
     border-radius: 0.5em;
-    padding: 0.5em 1em;
+    padding: 0.5em 1.25em;
 }
 
 button:hover, section {
@@ -78,4 +73,10 @@ button:hover, section {
 
 button:active {
     background-color: rgb(96, 96, 96);
+}
+
+.flex-ctr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
