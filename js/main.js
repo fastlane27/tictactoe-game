@@ -53,7 +53,7 @@ function render() {
 }
 
 function squareClick(e) {
-    let idx = e.target.id;
+    let idx = e.target.dataset.id;
     if (board[idx] !== null || winner !== null) return;
     board[idx] = turn;
     turn *= -1;
